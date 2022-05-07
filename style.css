@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.slider{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+.slider__lines{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+img{
+    pointer-events: none;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.slider__item{
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+.slider__buttons{
+    display: flex;
+    justify-content: center
+}
+
+.slider__prev, .slider__next{
+    display: block;
+    font-size: 40px;
+    padding: 10px 35px;
+    cursor: pointer;
+    border: 2px solid red;
+    color: red;
+    background: rgb(227, 223, 255);
+    border-radius: 50%;
+    margin: 40px 20px;
+}
+
+
+.slider__pagination{
+    position: absolute;
+    bottom: 115px; /*90px*/
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(227, 223, 255);
+    border-radius: 50px;
+    padding: 5px 10px;
+    z-index: 2;
+    display: flex;
+}
+.slider__pagination li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #000;
+    margin: 0 10px;
+}
+.slider__pagination li.active{
+    background: red;
+}
+
+@media (max-width: 320px){
+    .slider__prev, .slider__next{
+        font-size: 30px;
+        padding: 5px 17.5px;
+        margin: 30px 40px;
+    }
+    .slider__pagination{
+        bottom: 85px; /*90px*/
+        padding: 2px 4px;
+    }
+    .slider__pagination li{
+        width: 10px;
+        height: 10px;
+        margin: 0 7px;
+    }
+}
